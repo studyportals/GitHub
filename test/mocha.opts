@@ -1,0 +1,4 @@
+--full-trace
+--require ts-node/register
+--ui bdd
+src/test/**/*.test.ts
