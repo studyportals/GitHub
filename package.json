@@ -1,0 +1,53 @@
+{
+	"name": "@studyportals/github",
+	"version": "1.0.1",
+	"description": "Ease the process of interacting with GitHub (commenting on a Pull Request)",
+	"main": "dist/GitHub.js",
+	"scripts": {
+		"test": "npm run test-unit",
+		"test-unit": "npx mocha",
+		"tslint": "npx tslint --fix src/**",
+		"compile": "rm -rf ./dist && npx tsc",
+		"watch": "npx tsc --watch",
+		"preversion": "npm test",
+		"setup-hooks": "ln -s ../../.github/git-hooks/pre-commit.sh .git/hooks/pre-commit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/studyportals/GitHub.git"
+	},
+	"keywords": [
+		"github",
+		"comments",
+		"pull request"
+	],
+	"author": "Studyportals B.V.",
+	"license": "BSD-3-Clause",
+	"contributors": [
+		"Danko Adamczyk <danko@studyportals.com> (https://github.com/CZYK)"
+	],
+	"bugs": {
+		"url": "https://github.com/studyportals/GitHub/issues"
+	},
+	"homepage": "https://github.com/studyportals/GitHub#readme",
+	"devDependencies": {
+		"@types/chai": "^4.1.2",
+		"@types/mocha": "^2.2.48",
+		"@types/node": "^9.4.1",
+		"@types/node-fetch": "^1.6.7",
+		"@types/promise": "^7.1.30",
+		"chai": "^4.1.2",
+		"mocha": "^5.0.0",
+		"semver": "^5.5.0",
+		"ts-node": "^4.1.0",
+		"tslint": "^5.9.1",
+		"typemoq": "^2.1.0",
+		"typescript": "^2.7.1"
+	},
+	"dependencies": {
+		"node-fetch": "^2.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
+	}
+}

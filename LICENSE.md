@@ -1,6 +1,7 @@
 BSD 3-Clause License
 
-Copyright (c) 2018, StudyPortals
+Copyright (c) 2007-2018 Studyportals B.V. <http://www.studyportals.com>
+
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without

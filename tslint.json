@@ -1,0 +1,15 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "linterOptions": {
+        "exclude": [
+            "*.js",
+            "src/test/*"
+        ]
+    },
+    "rules": {
+        "indent": [true, "tabs"]
+    }
+}

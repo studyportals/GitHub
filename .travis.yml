@@ -1,0 +1,29 @@
+language: node_js
+node_js:
+  - '7'
+before_install:
+  - npm install -g npm@latest
+before_deploy:
+  - "echo 'Deploying package to npmjs.org'"
+  - npm run compile
+deploy:
+  - provider: npm
+    on:
+      branch: master
+      condition: "$TRAVIS_TAG =~ ^v[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$"
+    skip_cleanup: true
+    email: southpark@studyportals.eu
+    api_key:
+      secure: EJXnld1X05AozCBSwQjMKA9w4nTu5z2IdAXgFFjbRzCUXiWJ/pWFEpZLU4HgBX0l0UQJs+FlCwddSxMHsgzbP7dd1tp++LzJ/Z1p5EN0eoP0+cHLe1t/vSnXib1Ykf48y12Gvmdq5vkkeOOEt9frl1vdPZY7hYowST7vm7Yz8vgxgeq8ZO74OYWhQJt8yvwE2rDO+d2iCfgG82hvM9j9RdgSOX4j44KK3+VYNy8miwK69SECSje2+HCGe3QL21lJvBKQXipxiZxRKdSY0r6df6r41uqBPQC1LvrhOsPpORbA6fR2vjuaml89bwyKdimQX2qkAV311iCSrP+LfNrnXHlvJBsS5aJEk6iYp0SM82gFqCW4yNecLX5oS77UXiNNh6Y0fi40zINUKs+jpQlFcJazupukadsWkfN8+22SDVjAnKOJNYGS/9Jt0JtJviAdp0mCKZBzM95KLObJLVHf8Vc3QEPtJv3gizwTBOWxzStff5pD8Vg4/si2hcgDe+kyV/WAcI9TR3T7im2m4SUKhcXwVLUAaPOqkLSkROGvgd8HY0sbkS49WaOnduKaIG6y2QDypJFvhFyAM7XPRliRsN0ygWh7ew/jX0XRVSTDcjh+NheEV5WLlZjalXLbVXX/yfSTzYOPvhuER1Fqdc0XM6otbisN7rm5AErro3+Rlq8=
+    tag: latest
+  - provider: npm
+    on:
+      tags: true
+      all_branches: true
+      condition: "$TRAVIS_TAG =~ ^v[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}-.+$"
+    skip_cleanup: true
+    email: southpark@studyportals.eu
+    api_key:
+      secure: EJXnld1X05AozCBSwQjMKA9w4nTu5z2IdAXgFFjbRzCUXiWJ/pWFEpZLU4HgBX0l0UQJs+FlCwddSxMHsgzbP7dd1tp++LzJ/Z1p5EN0eoP0+cHLe1t/vSnXib1Ykf48y12Gvmdq5vkkeOOEt9frl1vdPZY7hYowST7vm7Yz8vgxgeq8ZO74OYWhQJt8yvwE2rDO+d2iCfgG82hvM9j9RdgSOX4j44KK3+VYNy8miwK69SECSje2+HCGe3QL21lJvBKQXipxiZxRKdSY0r6df6r41uqBPQC1LvrhOsPpORbA6fR2vjuaml89bwyKdimQX2qkAV311iCSrP+LfNrnXHlvJBsS5aJEk6iYp0SM82gFqCW4yNecLX5oS77UXiNNh6Y0fi40zINUKs+jpQlFcJazupukadsWkfN8+22SDVjAnKOJNYGS/9Jt0JtJviAdp0mCKZBzM95KLObJLVHf8Vc3QEPtJv3gizwTBOWxzStff5pD8Vg4/si2hcgDe+kyV/WAcI9TR3T7im2m4SUKhcXwVLUAaPOqkLSkROGvgd8HY0sbkS49WaOnduKaIG6y2QDypJFvhFyAM7XPRliRsN0ygWh7ew/jX0XRVSTDcjh+NheEV5WLlZjalXLbVXX/yfSTzYOPvhuER1Fqdc0XM6otbisN7rm5AErro3+Rlq8=
+    tag: prerelease
+after_deploy: "echo 'Deployed :-)'"
