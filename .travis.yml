@@ -9,7 +9,6 @@ before_deploy:
 deploy:
   - provider: npm
     on:
-      tags: true
       branch: master
       condition: "$TRAVIS_TAG =~ ^v[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}$"
     skip_cleanup: true
