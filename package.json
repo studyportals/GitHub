@@ -1,6 +1,6 @@
 {
 	"name": "@studyportals/github",
-	"version": "1.0.2-alpha.0",
+	"version": "1.0.2-alpha.1",
 	"description": "Ease the process of interacting with GitHub (commenting on a Pull Request)",
 	"main": "dist/GitHub.js",
 	"scripts": {
